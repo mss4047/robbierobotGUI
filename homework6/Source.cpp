@@ -8,7 +8,7 @@ Fl_Window *win;
 Fl_Menu_Bar *menubar;
 Robot_Part_Dialog *robot_part_dlg;
 
-vector<Torso*> torsos;//1
+vector<Torso*> torsos;
 vector<Head*> heads;
 vector<Battery*> batteries;
 vector <Arm*> arms;
