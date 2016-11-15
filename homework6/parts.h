@@ -10,6 +10,7 @@
 #include <FL/Fl_Multiline_Input.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Return_Button.H>
+#include <FL/Fl_Input_Choice.H>
 #include <iostream>
 #include <string>
 #include<iterator>

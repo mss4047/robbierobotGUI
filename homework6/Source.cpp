@@ -8,6 +8,12 @@ Fl_Window *win;
 Fl_Menu_Bar *menubar;
 Robot_Part_Dialog *robot_part_dlg;
 
+vector<Torso*> torsos;//1
+vector<Head*> heads;
+vector<Battery*> batteries;
+vector <Arm*> arms;
+vector<Locomotor*> locomotors;
+
 class Robot_Part_Dialog {
 public:
 	Robot_Part_Dialog() { 
@@ -16,7 +22,7 @@ public:
 		rp_name->align(FL_ALIGN_LEFT);
 		rp_part_number = new Fl_Input(120, 40, 210, 25, "Part Number:");
 		rp_part_number->align(FL_ALIGN_LEFT);
-		rp_type = new Fl_Input(120, 70, 210, 25, "Type:");
+		rp_type = new Fl_Input(120, 70, 210, 25, "Type (torso, head, arm, battery, or locomotor:");
 		rp_type->align(FL_ALIGN_LEFT);
 		rp_weight = new Fl_Input(120, 100, 210, 25, "Weight:");
 		rp_weight->align(FL_ALIGN_LEFT);
@@ -52,6 +58,7 @@ private:
 	Fl_Return_Button *rp_create;
 	Fl_Button *rp_cancel;
 };
+
 
 void CB(Fl_Widget* w, void* p) { } // No action
 void menu_create_robot_partCB(Fl_Widget* w, void* p) {
@@ -97,8 +104,9 @@ Fl_Menu_Item menuitems[] = {
 	{ "All Orders", 0, (Fl_Callback *)CB } };
 
 int main() {
-	const int X = 360;
-	const int Y = 220;
+	Fl::scheme("gtk+");
+	const int X = 400;
+	const int Y = 260;
 	// Create dialogs
 	robot_part_dlg = new Robot_Part_Dialog{};
 	// Create a window
@@ -110,6 +118,7 @@ int main() {
 	// Wrap it up and let FLTK do its thing
 	win->end();
 	win->show();
+	cout << robot_part_dlg->name() << endl;
 	return(Fl::run());
 }
 
