@@ -33,4 +33,4 @@ void Head::mysetter(string name, int p_num, string type, double weight, double c
 
 void Locomotor::mysetter(string name, int p_num, string type, double weight, double cost, string desc)
 {
-}
+}//llll
