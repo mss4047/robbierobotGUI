@@ -15,8 +15,12 @@
 #include <string>
 #include<iterator>
 #include"parts.h"
+#include <FL/Fl_Box.H>
+#include <conio.h>
+#include <stdio.h>
+#include <fstream>
 
-Fl_Window *win;
+
 
 using namespace std;
 

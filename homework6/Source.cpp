@@ -6,17 +6,17 @@
 #include <stdio.h> 
 #include "parts.h"
 #include "create.h"
-
+Fl_Window *win1;
 
 void createCB(Fl_Widget*w, void* p)
 {
 
-	win->hide();
-	//pm();
+	win1->hide();
+	create();
 }
 void viewCB(Fl_Widget*w, void* p)
 {
-	win->hide();
+	win1->hide();
 	//cm();
 
 }
@@ -24,14 +24,14 @@ void viewCB(Fl_Widget*w, void* p)
 int main()
 {
 	Fl::scheme("gtk+");
-	win = new Fl_Window{ 600, 400, "Robbie Robot Shop" };
+	win1 = new Fl_Window{ 600, 400, "Robbie Robot Shop" };
 	Fl_Button create(200, 50, 200, 30, "Create");
 	Fl_Button view(200, 100, 200, 30, "View");
 
 	create.callback(createCB);
 	view.callback(viewCB);
-	win->end();
-	win->show();
+	win1->end();
+	win1->show();
 
 	return(Fl::run());
 }
