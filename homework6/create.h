@@ -2,9 +2,16 @@
 #define CREATE_H
 
 #include "create_parts.h"
+#include"robot_modelsh.h"
 
 Fl_Window *createwin;
+Fl_Window *createrm;
 Fl_Window *rpwin;
+
+vector<model*> models;
+model* tempmodel;
+
+Fl_Input *rm_name, *rm_model_number, *rm_price;
 void rp_createCB(Fl_Widget* w, void* p)
 {
 	createwin->hide();
@@ -27,10 +34,35 @@ void rp_createCB(Fl_Widget* w, void* p)
 
 	Fl::run();
 }
+void create_rm(Fl_Widget* w, void* p)
+{
+	tempmodel->name = rm_name->value();
+	tempmodel->price = stod(rm_name->value());
+	tempmodel->modelNumber = stoi(rm_model_number->value());
+
+	models.push_back(tempmodel);
+	
+}
 
 void rm_createCB(Fl_Widget* w, void* p)
 {
+	createrm = new Fl_Window(800,900);
 
+	rm_name = new Fl_Input(130, 270, 210, 25, " Model Name");
+	rm_name->align(FL_ALIGN_LEFT);
+
+	rm_model_number = new Fl_Input(130, 350, 210, 25, "Model Number");
+	rm_model_number->align(FL_ALIGN_LEFT);
+
+	rm_price = new Fl_Input(130, 350, 210, 25, "Model Number");
+	rm_price->align(FL_ALIGN_LEFT);
+
+	Fl_Return_Button *rp_confirm;
+	rp_confirm = new Fl_Return_Button(150, 610, 120, 25, "Confirm");
+	rp_confirm->callback((Fl_Callback *)create_rm, 0);
+
+	createrm->show();
+	Fl::run();
 }
 
 void userCB(Fl_Widget* w, void* p)

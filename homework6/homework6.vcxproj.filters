@@ -32,5 +32,8 @@
     <ClInclude Include="create_parts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="robot_modelsh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
