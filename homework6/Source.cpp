@@ -8,15 +8,20 @@ Fl_Window *win;
 Fl_Menu_Bar *menubar;
 Robot_Part_Dialog *robot_part_dlg;
 
+Fl_Input *my_input = (Fl_Input *)0;
+
 vector<Torso*> torsos;
 vector<Head*> heads;
 vector<Battery*> batteries;
 vector <Arm*> arms;
 vector<Locomotor*> locomotors;
 
+vector<robo*> parts;
+
 class Robot_Part_Dialog {
 public:
-	Robot_Part_Dialog() { 
+	Robot_Part_Dialog() {
+
 		dialog = new Fl_Window(340, 270, "Robot Part");
 		rp_name = new Fl_Input(120, 10, 210, 25, "Name:");
 		rp_name->align(FL_ALIGN_LEFT);
@@ -46,9 +51,14 @@ public:
 	string weight() { return rp_weight->value(); }
 	string cost() { return rp_cost->value(); }
 	string description() { return rp_description->value(); }
+	string max_speed() { return maxSpeed->value(); }
+	string power_con_loco() { return powerConLoco->value(); }
 
 private:
 	Fl_Window *dialog;
+	Fl_Window *newdialog;
+	Fl_Input *maxSpeed;
+	Fl_Input *powerConLoco;
 	Fl_Input *rp_name;
 	Fl_Input *rp_part_number;
 	Fl_Input *rp_type;
@@ -56,11 +66,13 @@ private:
 	Fl_Input *rp_cost;
 	Fl_Input *rp_description;
 	Fl_Return_Button *rp_create;
+	Locomotor *temploco;
 	Fl_Button *rp_cancel;
 };
 
 
-void CB(Fl_Widget* w, void* p) { } // No action
+
+void CB(Fl_Widget* w, void* p) { }
 void menu_create_robot_partCB(Fl_Widget* w, void* p) {
 	robot_part_dlg->show();
 }
@@ -88,7 +100,7 @@ Fl_Menu_Item menuitems[] = {
 	{ 0 },
 	{ "&Edit", 0, 0, 0, FL_SUBMENU },
 	{ "&Undo", 0, (Fl_Callback *)CB },
-	{ "Cu&t", 0, (Fl_Callback *)CB },
+	{ "&Cut", 0, (Fl_Callback *)CB },
 	{ "&Copy", 0, (Fl_Callback *)CB },
 	{ "&Paste", 0, (Fl_Callback *)CB },
 	{ 0 },
@@ -118,7 +130,6 @@ int main() {
 	// Wrap it up and let FLTK do its thing
 	win->end();
 	win->show();
-	cout << robot_part_dlg->name() << endl;
 	return(Fl::run());
 }
 
