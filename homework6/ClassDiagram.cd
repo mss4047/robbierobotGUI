@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="robo">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAVIABgAAAAAAAAAAA=</HashCode>
+      <FileName>parts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Locomotor">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAABEAA=</HashCode>
+      <FileName>parts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Arm">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>parts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battery">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAEQAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>parts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Head">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>parts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Torso">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAEAAAAABIAAAAQAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>parts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="model" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>robot_modelsh.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Orders" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBACABQAACAAAAABAABAAAAAAAAAAAAEAAAQAAAAA=</HashCode>
+      <FileName>robot_modelsh.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
