@@ -15,6 +15,9 @@
 #include <string>
 #include<iterator>
 #include"parts.h"
+
+Fl_Window *win;
+
 using namespace std;
 
 

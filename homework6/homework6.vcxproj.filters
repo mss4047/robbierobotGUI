@@ -26,5 +26,11 @@
     <ClInclude Include="parts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="create.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="create_parts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
