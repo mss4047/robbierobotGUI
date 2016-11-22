@@ -6,7 +6,7 @@
 
 Fl_Window *createwin;
 Fl_Window *createrm;
-Fl_Window *rpwin, *order;
+Fl_Window *rpwin, *order, *userwin, *custwin, *sawin;
 
 vector<model*> models;
 model* tempmodel;
@@ -14,7 +14,10 @@ model* tempmodel;
 vector<Orders*> orders;
 Orders* temporder;
 
-Fl_Input *rm_name, *rm_model_number, *rm_price, *ordernumber, *date, *customer, *sa, *status, *cost, *shipping, *tax, *total;
+vector<string> customers;
+vector<string> sas;
+
+Fl_Input *rm_name, *rm_model_number, *rm_price, *ordernumber, *date, *customer, *sa, *status, *cost, *shipping, *tax, *total, *customern,*san;
 
 void rp_createCB(Fl_Widget* w, void* p)
 {
@@ -126,9 +129,71 @@ void orderCB(Fl_Widget* w, void* p)
 	Fl::run();
 }
 
+void add_sa(Fl_Widget* w, void* p)
+{
+	sawin->hide();
+	string newc;
+	newc = san->value();
+	sas.push_back(newc);
+	createwin->show();
+}
+
+void create_sa(Fl_Widget* w, void* p)
+{
+	userwin->hide();
+	sawin = new Fl_Window(600, 700, "Create Customer");
+
+	san = new Fl_Input(100, 25, 210, 25, "Customer");
+	san->align(FL_ALIGN_LEFT);
+
+	Fl_Return_Button *sa_confirm;
+	sa_confirm = new Fl_Return_Button(150, 610, 120, 25, "Confirm");
+	sa_confirm->callback((Fl_Callback *)add_sa, 0);
+
+	sawin->end();
+	sawin -> show();
+}
+
+
+
+void create_cust(Fl_Widget* w, void* p)
+{
+	custwin->hide();
+
+	string newc;
+	newc = customern->value();
+	customers.push_back(newc);
+	createwin->show();
+}
+void create_customer(Fl_Widget* w, void* p)
+{
+	userwin->hide();
+	custwin = new Fl_Window(600, 700, "Create Customer");
+
+	customern = new Fl_Input(100, 25, 210, 25, "Customer");
+	customern->align(FL_ALIGN_LEFT);
+
+	Fl_Return_Button *cust_confirm;
+	cust_confirm = new Fl_Return_Button(150, 610, 120, 25, "Confirm");
+	cust_confirm->callback((Fl_Callback *)create_cust, 0);
+
+	custwin->end();
+	custwin->show();
+}
+
+
 void userCB(Fl_Widget* w, void* p)
 {
+	createwin->hide();
+	userwin = new Fl_Window(600, 400, "Create new User");
+	Fl_Button customer(200, 100, 200, 30, "Customer");
+	Fl_Button sac(200, 150, 200, 30, "Sales Associate");
 
+	customer.callback(create_customer);
+	sac.callback(create_sa);
+
+	userwin->end();
+	userwin->show();
 }
 
 void create()
